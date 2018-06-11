@@ -1,0 +1,48 @@
+<html>
+ <head>
+ <!-- styles put here, but you can include a CSS file and reference it instead! -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <style type="text/css">
+     html, body { height: 100%; margin: 0; padding: 0; }
+     #map { height: 100%; }
+   </style>
+ </head>
+ <body>
+
+  <div class="row">
+    <div class="hamburger-icon col-xs-8" id="showList">
+       <a id="menu">
+         <img src="/Users/singh6/Documents/Udacity/GoogleMapsAPIKnockoutProject/images/Hamburger_icon.svg.png" alt="hamburger-icon" style="width:128px;height:128px;">
+       </a>
+   </div>
+  </div>
+
+   <div class="row">
+     <div class="col-xs-3" style="background-color: #92a8d1;">
+       <div class="sideFilter col-xs-10" id="drawer">
+         <h2> Nottingham Centre Locations </h2>
+           <div class="sideFilter">
+               <div class="input col-xs-10">
+                 <input id="filterTextBox" class="inputTextBox" type="text" style="width: 300px;" class="form-control" placeholder="Search Location" data-bind="textInput: query">
+              </div>
+          </div>
+
+          <div class="informationWindow-container">
+                <ul class="location-list" data-bind="foreach: filteredLocations">
+                      <li data-bind="text: title, click: $parent.clickedMarker"></li>
+                </ul>
+            </div>
+        </div>
+     </div>
+     <div class="col-xs-9">
+       <div id="map"></div>
+     </div>
+   </div>
+
+    <script src="js/lib/knockout-3.2.0.js"></script>
+    <script src="js/app.js"></script>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyB3YxIJQCzsNTcoT61iHJf5P9FiJb2oFg0&callback=initMap">
+    </script>
+</body>
+</html>
